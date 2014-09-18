@@ -4,7 +4,7 @@
 # build via Docker:
 #
 # $ docker build -t junixsocket .
-# $ docker run -v `pwd`/dist:/dist junixsocket
+# $ docker run --rm -v `pwd`:/dist junixsocket
 #
 # ... build artifacts can be found in "`pwd`/dist".
 #
@@ -17,4 +17,5 @@ RUN apt-get update && apt-get install -y build-essential libc6-dev-i386 ant juni
 ADD ./junixsocket/ /junixsocket/
 ADD ./build-in-docker.sh /junixsocket/build.sh
 WORKDIR /junixsocket/
+RUN ant
 CMD ./build.sh

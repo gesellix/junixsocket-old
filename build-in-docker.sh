@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ant
+ls -l dist/
 
 if [[ -w /dist ]];
 then
