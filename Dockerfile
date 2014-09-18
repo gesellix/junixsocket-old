@@ -1,14 +1,3 @@
-# source code from: 
-#
-#
-# build via Docker:
-#
-# $ docker build -t junixsocket .
-# $ docker run --rm -v `pwd`:/dist junixsocket
-#
-# ... build artifacts can be found in "`pwd`/dist".
-#
-
 FROM java:8
 MAINTAINER Tobias Gesellchen <tobias@gesellix.de>
 
