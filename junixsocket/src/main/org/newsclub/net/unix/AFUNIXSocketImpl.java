@@ -351,9 +351,12 @@ class AFUNIXSocketImpl extends SocketImpl {
                         expectInteger(value));
                 return;
             case SocketOptions.SO_KEEPALIVE:
-            case SocketOptions.TCP_NODELAY:
                 NativeUnixSocket.setSocketOptionInt(fd, optID,
                         expectBoolean(value));
+                return;
+            case SocketOptions.TCP_NODELAY:
+            // changed by Tobias Gesellchen (tobias@gesellix.de),
+            // because the native implementation didn't recognize the option id.
                 return;
             }
         } catch (final AFUNIXSocketException e) {
